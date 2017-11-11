@@ -1,0 +1,16 @@
+
+.logo {
+    z-index: -10;
+    background-color: #673ab7;
+    width: 100%;
+    height: 700px;
+    background-image: url('../../assets/imgs/back.jpg');
+}
+
+.name-logo {
+	color: white;
+    text-align: center;
+    padding: 20PX;
+	background-color: rgb(50, 224, 85);
+	width: 100%;
+}

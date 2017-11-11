@@ -1,1 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:300');
+
+.header-toolbar {
+	position: fixed;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.19) !important;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.header-toolbar-colored {
+	transition: 0.7s;
+	position: fixed;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	background-color: white !important;
+	color: black;
+}
+
+.white-bar-min {
+	text-align: center;
+	margin: 5px;
+	height: 35px;
+	background-color: white;
+	width: 100%;
+}
+
+.apoio {
+	transition-duration: 0.8;
+	margin-left: 70%;
+}
+
+.disappear {
+	visibility: hidden;
+}
+
+
+.logo img, .logo-tree img, .logo-insetos img, .logo-fosseis img {
+    position:absolute;
+    top:35%;
+    left:50%;
+    margin-top:-50px;
+    margin-left:-50px;
+}
+
+
+/* 
+ Dispositivos com largura mínima de 1200 pixels. Por exemplo TVs.
+*/
+
+.appear {
+	transition-delay: 0.2s;
+	transition-duration: 0.7s;
+	margin-top: 70%;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("assets/imgs/parallax.jpg");
+    /* Set a specific height */
+    min-height: 450px; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-two {
+    /* The image used */
+    background-image: url("assets/imgs/parallax2.jpg");
+
+    /* Set a specific height */
+    min-height: 300px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+html, body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
