@@ -5,3 +5,24 @@
     height: 700px;
     background-image: url('../../assets/imgs/fosseis/fosseis.jpg');
 }
+
+
+@media screen and (min-width: 320px) {
+    .logo-fosseis {
+        z-index: -10;
+        background-color: #673ab7;
+        width: 100%;
+        height: 250px;
+        background-image:  url('../../assets/imgs/fosseis/fosseis.jpg');
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .logo-fosseis {
+        z-index: -10;
+        background-color: #673ab7;
+        width: 100%;
+        height: 400px;
+        background-image:  url('../../assets/imgs/fosseis/fosseis.jpg');
+    }
+}

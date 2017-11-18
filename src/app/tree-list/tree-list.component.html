@@ -1,0 +1,33 @@
+<div class="spaceBody">
+    <div class="example-header">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro">
+        </mat-form-field>
+    </div>
+    <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource" >
+            <!-- Name Column -->
+            <ng-container matColumnDef="nome_cie">
+                <mat-header-cell *matHeaderCellDef> Nome Cientifico </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.nome_cie}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="categoria">
+                <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.categoria}} </mat-cell>
+            </ng-container>
+
+            <!-- Color Column -->
+            <ng-container matColumnDef="origem">
+                <mat-header-cell *matHeaderCellDef> Origem </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.origem}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>    
+        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+        </mat-paginator>
+    </div>
+</div>

@@ -15,7 +15,7 @@ export class ToolbarEcoDirective {
 	onWindowScroll() {
 		let number = window.pageYOffset || document.documentElement.scrollTop;
 
-		if (number > 500) {
+		if (number > 300) {
 			this.putClass(true);
 		}else{
 			this.putClass(false);

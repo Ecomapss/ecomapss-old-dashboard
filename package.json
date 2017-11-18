@@ -1,4 +1,4 @@
-t remote add origin https://github.com/MSLacerda/FrontEco.git{
+{
   "name": "eco-app",
   "version": "0.0.0",
   "license": "MIT",

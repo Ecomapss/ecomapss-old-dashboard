@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Add loc</h1>
+<div mat-dialog-content>
+  Para casas decimais, utilize "."
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.lat" placeholder="latitude">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput tabindex="1" [(ngModel)]="data.lng" placeholder="longitude">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" tabindex="2">Ok</button>
+  <button mat-button (click)="onNoClick()" tabindex="-1">Cancelar</button>
+</div>

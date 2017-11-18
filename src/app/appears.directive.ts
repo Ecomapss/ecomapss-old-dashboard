@@ -3,6 +3,7 @@ import { Directive, ElementRef, Renderer2, HostListener } from "@angular/core";
 @Directive({
   selector: "[appAppears]"
 })
+
 export class AppearsDirective {
   constructor(private _el: ElementRef, private _render: Renderer2) {}
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 
 @Component({
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  constructor (breakpointObserver: BreakpointObserver) {
+      const isSmallScreen = breakpointObserver.isMatched('(max-width: 599px)');
+  }
+
+
   title = 'ECOMapss';
 }
