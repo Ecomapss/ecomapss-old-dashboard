@@ -3,6 +3,8 @@ import { WebConsumerService } from "../services/web-consumer.service";
 import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 import { Tree } from "../tree-component/classes/Tree";
 import { MessageServiceService } from '../services/message-service.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
 
 @Component({
   selector: "app-tree-list",
@@ -11,7 +13,7 @@ import { MessageServiceService } from '../services/message-service.service';
   encapsulation: ViewEncapsulation.None
 })
 export class TreeListComponent implements OnInit {
-  displayedColumns = ["nome_cie", "categoria", "origem"];
+  displayedColumns = ["nome_cie", "categoria", "origem", "opcoes"];
   trees: Array<Tree>;
   dataSource: MatTableDataSource<Tree>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -31,11 +33,14 @@ export class TreeListComponent implements OnInit {
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
+
+  deleteItem(id: string){
+
+  }
   
   getData(): void {
     this._webData.getTrees().subscribe(trees => {
       let ElementData: Tree[] = trees.Data;
-      console.log(ElementData);
       this.dataSource = new MatTableDataSource(ElementData);
     });
   }

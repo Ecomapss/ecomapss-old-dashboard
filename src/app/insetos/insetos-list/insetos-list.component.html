@@ -1,3 +1,39 @@
-<p>
-  insetos-list works!
-</p>
+<div class="spaceBody">
+    <div class="example-header">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro">
+        </mat-form-field>
+    </div>
+    <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource" >
+
+            <ng-container matColumnDef="ordem">
+                <mat-header-cell *matHeaderCellDef> Ordem </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.ordem}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="categoria">
+                <mat-header-cell *matHeaderCellDef> Reino </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.reino}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="origem">
+                <mat-header-cell *matHeaderCellDef> filo </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.filo}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="opcoes">
+                <mat-header-cell *matHeaderCellDef> Opções </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        <button mat-button>Editar</button>
+                        <button mat-button (click)="deleteItem(element._id)">Excluir</button>
+                    </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColums"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColums;"></mat-row>
+        </mat-table>    
+        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+        </mat-paginator>
+    </div>
+</div>

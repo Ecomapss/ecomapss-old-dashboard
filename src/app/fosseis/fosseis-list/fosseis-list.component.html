@@ -1,3 +1,41 @@
-<p>
-  fosseis-list works!
-</p>
+<div class="spaceBody">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro">
+    </mat-form-field>
+  </div>
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+      <!-- Name Column -->
+      <ng-container matColumnDef="designacao">
+        <mat-header-cell *matHeaderCellDef> Designação </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.designacao}} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="idade">
+        <mat-header-cell *matHeaderCellDef> Idade </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.idade}} </mat-cell>
+      </ng-container>
+
+      <!-- Color Column -->
+      <ng-container matColumnDef="procedencia">
+        <mat-header-cell *matHeaderCellDef> Procedencia </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.procedencia}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="opcoes">
+        <mat-header-cell *matHeaderCellDef> Opções </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-button>Editar</button>
+          <button mat-button (click)="deleteItem(element._id)">Excluir</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+  </div>
+</div>

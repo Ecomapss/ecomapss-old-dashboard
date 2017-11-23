@@ -8,12 +8,35 @@
                   <ng-template mat-tab-label>
                         Adicionar Fossil
                   </ng-template>
+                   <form (ngSubmit)="submit()" class="example-container mat-elevation-z8 spaceBody" name="fossilForm" #fossilForm="ngForm">
+                        <mat-form-field>
+                              <input matInput [(ngModel)]="model.designacao" name="designacao" placeholder="Designação">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                              <input matInput [(ngModel)]="model.estratigrafia" name="estratigrafia" placeholder="Estratigrafia">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                              <input matInput [(ngModel)]="model.idade" name="idade" placeholder="Idade">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                              <input matInput [(ngModel)]="model.procedencia" name="procedencia" placeholder="Procedência">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                              <textarea matInput [(ngModel)]="model.info" name="info" placeholder="Informações Extras"></textarea>
+                        </mat-form-field>
+                        <button type="submit" mat-raised-button color="primary">Salvar</button>
+                        <mat-progress-bar *ngIf="pbar" mode="indeterminate"></mat-progress-bar>
+                  </form>
             </mat-tab>
             <mat-tab>
                   <ng-template mat-tab-label>
                         Listar Fossil
                   </ng-template>
-
+                  <app-fosseis-list></app-fosseis-list>
             </mat-tab>
       </mat-tab-group>
 </div>

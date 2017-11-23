@@ -39,6 +39,14 @@ import { MessageServiceService } from './services/message-service.service';
 import { LogComponent } from './tree-component/dialogs/log/log.component';
 import { InsetosListComponent } from './insetos/insetos-list/insetos-list.component';
 import { FosseisListComponent } from './fosseis/fosseis-list/fosseis-list.component';
+import { Config } from './settings/Config';
+import { FosseisWebService } from './services/fosseis-web.service';
+import { InsetosWebService } from './services/insetos-web.service';
+import { ErrorPlugin } from './settings/ShowingErrors';
+import { ConfirmDeleteComponent } from './dialogs/confirm-delete/confirm-delete.component';
+import { TreeEditComponent } from './tree-component/tree-edit/tree-edit.component';
+import { FossilEditComponent } from './fosseis/fossil-edit/fossil-edit.component';
+import { InsetoEditComponent } from './inseto/inseto-edit/inseto-edit.component';
 
 
 
@@ -64,7 +72,11 @@ const appRoutes: Routes = [
     TreeDetailComponent,
     LogComponent,
     InsetosListComponent,
-    FosseisListComponent
+    FosseisListComponent,
+    ConfirmDeleteComponent,
+    TreeEditComponent,
+    FossilEditComponent,
+    InsetoEditComponent
   ],
   imports: [
   	RouterModule.forRoot(appRoutes),
@@ -90,12 +102,17 @@ const appRoutes: Routes = [
     MatListModule
   ],
   entryComponents: [
-    LogComponent
+    LogComponent,
+    ConfirmDeleteComponent
   ],
-  providers: [WebConsumerService,MessageServiceService],
+  providers: [WebConsumerService,FosseisWebService,InsetosWebService,MessageServiceService, ErrorPlugin, Config],
   bootstrap: [AppComponent]
 })
 
 
 
-export class AppModule { }
+export class AppModule { 
+  constructor(private _config: Config) {
+    _config.setUrl("http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/");
+  }
+}

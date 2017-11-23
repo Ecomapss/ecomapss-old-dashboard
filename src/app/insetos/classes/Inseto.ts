@@ -1,12 +1,36 @@
 export interface Resource {
-    Data: Array<>
+    Data: Array<Inseto>
 }
 
-
 export interface Inseto{
-    designacao: String,
-    estratigrafia: String,
-    idade: String,
-    procedencia: String,
+    inseto: Boolean,
+    ordem: String,
+    reino: String,
+    filo: String,
+    classe: String,
     info: String
+}
+
+export interface OneInseto {
+    data: Inseto,
+    Error: Boolean
+}
+
+export class InsetoModel implements Inseto {
+    constructor(
+        public inseto: Boolean,
+        public ordem: String,
+        public reino: String,
+        public filo: String,
+        public classe: String,
+        public info: String
+    ){this.inseto = true}
+
+    clear(): void {
+        this.ordem = "";
+        this.classe = "";
+        this.filo = "";
+        this.info = "";
+        this.reino = "";
+    }
 }

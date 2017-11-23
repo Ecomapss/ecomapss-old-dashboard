@@ -8,15 +8,31 @@
                   <ng-template mat-tab-label>
                         Adicionar Inseto
                   </ng-template>
+                  <form (ngSubmit)="submit()" class="example-container mat-elevation-z8 spaceBody" name="insetoForm" #insetoForm="ngForm">
+                        <mat-form-field>
+                              <input matInput [(ngModel)]="model.ordem" name="ordem" placeholder="Ordem">
+                        </mat-form-field>
+                        <mat-form-field>
+                              <input matInput [(ngModel)]="model.reino" name="reino" placeholder="Reino">
+                        </mat-form-field>
+                        <mat-form-field>
+                              <input matInput [(ngModel)]="model.filo" name="filo" placeholder="Filo">
+                        </mat-form-field>
+                        <mat-form-field>
+                              <input matInput [(ngModel)]="model.classe" name="classe" placeholder="Classe">
+                        </mat-form-field>
+                        <mat-form-field>
+                              <textarea matInput [(ngModel)]="model.info" name="info" placeholder="Informações Extras"></textarea>
+                        </mat-form-field>
+                        <button type="submit" mat-raised-button color="primary">Salvar</button>
+                        <mat-progress-bar *ngIf="pbar" mode="indeterminate"></mat-progress-bar>
+                  </form>
             </mat-tab>
             <mat-tab>
                   <ng-template mat-tab-label>
                         Listar Insetos
                   </ng-template>
-
-                  <form (ngSubmit)="submit()" >
-                        
-                  </form>
+                  <app-insetos-list></app-insetos-list>
             </mat-tab>
       </mat-tab-group>
 </div>

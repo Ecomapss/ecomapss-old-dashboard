@@ -57,6 +57,12 @@
 	flex-flow: column wrap;
 }
 
+
+.spaceBody {
+    padding: 70px;
+}
+
+
 @media screen and (min-width: 320px) {
 
 	.logo img, .logo-tree img, .logo-insetos img, .logo-fosseis img {
@@ -122,4 +128,31 @@
 html, body {
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
+}
+
+/*FORM E TABLES  */
+/* Structure */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.spaceBody {
+    padding: 50px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
 }

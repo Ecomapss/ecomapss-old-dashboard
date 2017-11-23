@@ -1,10 +1,16 @@
 export class Config {
-    bsURL: String;
+    private bsURL: String;
     constructor () {
-        this.bsURL = "http://flask-env.zyq3kkkkdj.us-west-2.elasticbeanstalk.com/";
     }
-
     getBsUrl() {
         return this.bsURL;
     }
+    setUrl(url: String){
+        this.bsURL = url;
+    }
+}
+
+export interface Info {
+  Error: Boolean,
+  Menssage: string,
 }
