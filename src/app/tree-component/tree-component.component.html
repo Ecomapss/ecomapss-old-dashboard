@@ -44,6 +44,10 @@
         </mat-form-field>
 
         <mat-form-field>
+          <input matInput [(ngModel)]="model.localidade" name="localidade" placeholder="Localidade">
+        </mat-form-field>
+
+        <mat-form-field>
           <textarea matInput [(ngModel)]="model.info" name="info" placeholder="Informações Extras"></textarea>
         </mat-form-field>
         <div *ngIf="this.model.loc.length > 0">

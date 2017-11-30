@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { TreeComponentComponent} from './tree-component/tree-component.component';
+import { TreeComponentComponent } from './tree-component/tree-component.component';
 import { HttpClientModule } from '@angular/common/http';   
 import {FormsModule} from '@angular/forms';  
+
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';      
@@ -21,7 +22,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list';
-
 
 
 import { RouterModule, Routes } from '@angular/router';
@@ -47,6 +47,10 @@ import { ConfirmDeleteComponent } from './dialogs/confirm-delete/confirm-delete.
 import { TreeEditComponent } from './tree-component/tree-edit/tree-edit.component';
 import { FossilEditComponent } from './fosseis/fossil-edit/fossil-edit.component';
 import { InsetoEditComponent } from './inseto/inseto-edit/inseto-edit.component';
+import { HistoriaComponent } from './historia/historia.component';
+import { ListComponent } from './historia/list/list.component';
+import { EditComponent } from './historia/edit/edit.component';
+import { HistoriasService } from './services/historias.service';
 
 
 
@@ -55,6 +59,9 @@ const appRoutes: Routes = [
   {path: "trees", component: TreeComponentComponent },
   {path: "fosseis", component: FosseisComponent},
   {path: "insetos", component: InsetosComponent},
+  {path: "treeEdit", component: TreeComponentComponent},
+  {path: "fossilEdit", component: FossilEditComponent},
+  {path: "historia", component: HistoriaComponent},
   {path: "", component: HomeComponent}
 ]
 	
@@ -76,7 +83,10 @@ const appRoutes: Routes = [
     ConfirmDeleteComponent,
     TreeEditComponent,
     FossilEditComponent,
-    InsetoEditComponent
+    InsetoEditComponent,
+    HistoriaComponent,
+    ListComponent,
+    EditComponent
   ],
   imports: [
   	RouterModule.forRoot(appRoutes),
@@ -105,7 +115,7 @@ const appRoutes: Routes = [
     LogComponent,
     ConfirmDeleteComponent
   ],
-  providers: [WebConsumerService,FosseisWebService,InsetosWebService,MessageServiceService, ErrorPlugin, Config],
+  providers: [WebConsumerService,FosseisWebService,InsetosWebService,MessageServiceService,HistoriasService, ErrorPlugin, Config],
   bootstrap: [AppComponent]
 })
 

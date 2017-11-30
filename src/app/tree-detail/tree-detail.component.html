@@ -1,3 +1,54 @@
-<p>
-  tree-detail works!
-</p>
+<form (ngSubmit)="putData()" class="example-container mat-elevation-z8 spaceBody" name="treeForm" #treeForm="ngForm">
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.nome_cie" name="nome-cie" placeholder="Nome Ciêntifico">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.nome_pop" name="nome-pop" placeholder="Nomes Populares">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.categoria" name="categoria" placeholder="Forma de Vida">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.clima" name="clima" placeholder="Tipo de vegetação">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.familia" name="familia" placeholder="Familia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.origem" name="origem" placeholder="Origem">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.luminosidade" name="luminosidade" placeholder="Endemismo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.altura" name="altura" placeholder="Altura">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.localidade" name="localidade" placeholder="Localidade">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="model.info" name="info" placeholder="Informações Extras"></textarea>
+  </mat-form-field>
+  <div *ngIf="this.model.loc.length > 0">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let locs of this.model.loc; let i = index">
+        Lat: {{locs.lat}} Long: {{locs.lng}}
+        <button type="button" mat-icon-button (click)="remove(i)">
+              <mat-icon>delete</mat-icon>
+              </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+  <button type="button" (click)="openDialog()" mat-raised-button color="warn">Add Localização</button>
+  <button type="submit" mat-raised-button color="primary">Salvar</button>
+  <mat-progress-bar *ngIf="pbar" mode="indeterminate"></mat-progress-bar>
+</form>

@@ -7,6 +7,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { ErrorPlugin } from "../../settings/ShowingErrors";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 import { ConfirmDeleteComponent } from "../../dialogs/confirm-delete/confirm-delete.component";
+import { MessageServiceService } from '../../services/message-service.service';
 @Component({
   selector: "app-fosseis-list",
   templateUrl: "./fosseis-list.component.html",
@@ -20,8 +21,13 @@ export class FosseisListComponent implements OnInit {
     private _webServ: FosseisWebService,
     private _snackBar: MatSnackBar,
     private _errorPlugin: ErrorPlugin,
-    private dialog: MatDialog
-  ) {}
+    private dialog: MatDialog,
+    private _messageService: MessageServiceService
+  ) {
+    this._messageService.listen().subscribe(res => {
+      this.getData();
+    })
+  }
 
   ngOnInit() {
     this.getData();

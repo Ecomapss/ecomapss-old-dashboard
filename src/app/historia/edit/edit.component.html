@@ -1,0 +1,15 @@
+<form (ngSubmit)="putData()" class="example-container mat-elevation-z8 spaceBody" name="fossilForm" #fossilForm="ngForm">
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.titulo" name="titulo" placeholder="Titulo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="model.localidade" name="localidade" placeholder="localidade">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="model.info" name="info" placeholder="Informações Extras"></textarea>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Salvar</button>
+  <mat-progress-bar *ngIf="pbar" mode="indeterminate"></mat-progress-bar>
+</form>

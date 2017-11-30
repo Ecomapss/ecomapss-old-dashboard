@@ -17,6 +17,7 @@ export interface Tree {
   luminosidade: string;
   altura: string;
   info: string;
+  localidade: string;
   loc: Array<Number>;
 }
 
@@ -31,6 +32,7 @@ export class TreeModel implements Tree {
     public luminosidade: string,
     public altura: string,
     public info: string,
+    public localidade: string,
     public loc: Array<Number>
   ) {}
 
@@ -44,6 +46,7 @@ export class TreeModel implements Tree {
     this.origem = "";
     this.altura = "";
     this.info = "";
+    this.localidade = "";
     this.loc = [];
   }
 }

@@ -23,8 +23,9 @@ import { ErrorPlugin } from "../settings/ShowingErrors";
 export class TreeComponentComponent implements OnInit {
   title = "Tres";
   pbar: Boolean = false;
+  isEdit: Boolean = false;
 
-  model = new TreeModel("", "", "", "", "", "", "", "", "", []);
+  model = new TreeModel("", "", "", "", "", "", "", "", "","", []);
 
   constructor(
     private _webData: WebConsumerService,

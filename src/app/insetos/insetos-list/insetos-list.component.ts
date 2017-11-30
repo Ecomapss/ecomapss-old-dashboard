@@ -6,6 +6,7 @@ import { ErrorPlugin } from "../../settings/ShowingErrors";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 import { ConfirmDeleteComponent } from "../../dialogs/confirm-delete/confirm-delete.component";
+import { MessageServiceService } from '../../services/message-service.service';
 
 @Component({
   selector: "app-insetos-list",
@@ -21,8 +22,13 @@ export class InsetosListComponent implements OnInit {
     private _webServ: InsetosWebService,
     private _snackBar: MatSnackBar,
     private errorPlugin: ErrorPlugin,
-    public dialog: MatDialog
-  ) {}
+    public dialog: MatDialog,
+    private _messageService: MessageServiceService
+  ) {
+    this._messageService.listen().subscribe(res => {
+      this.getData();
+    })
+  }
 
   ngOnInit() {
     this.getData();

@@ -1,0 +1,20 @@
+
+@media screen and (min-width: 320px) {
+    .logo {
+        z-index: -10;
+        background-color: #673ab7;
+        width: 100%;
+        height: 250px;
+        background-image: url('../../assets/imgs/back.jpg');
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .logo {
+        z-index: -10;
+        background-color: #673ab7;
+        width: 100%;
+        height: 400px;
+        background-image: url('../../assets/imgs/back.jpg');
+    }
+}

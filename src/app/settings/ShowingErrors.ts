@@ -19,9 +19,9 @@ export class ErrorPlugin {
 
   displayMessage(snackBar: MatSnackBar) {
     let standartMessage = new String();
-    this._prop.Error
-      ? (standartMessage = "Error, ")
-      : (standartMessage = "Sucesso, ");
+    standartMessage = this._prop.Error
+      ? "Error, "
+      : "Sucesso, ";
      let snack = snackBar.open(standartMessage + this._prop.Menssage, "", this._confObj);
   }
 }

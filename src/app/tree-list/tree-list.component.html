@@ -1,4 +1,4 @@
-<div class="spaceBody">
+<div class="spaceBody" *ngIf="!isEdit" [@fadeInOut]>
     <div class="example-header">
         <mat-form-field>
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro">
@@ -27,7 +27,7 @@
             <ng-container matColumnDef="opcoes">
                 <mat-header-cell *matHeaderCellDef> Opções </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <button mat-button>Editar</button>
+                    <button mat-button (click)="editItem(element._id)">Editar</button>
                     <button mat-button (click)="deleteItem(element._id)">Excluir</button>
                 </mat-cell>
             </ng-container>
@@ -38,4 +38,11 @@
         <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
         </mat-paginator>
     </div>
+</div>
+
+<div class="spaceBody" *ngIf="isEdit" [@fadeInOut]>
+    <button mat-icon-button (click)="back();">
+        <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+    </button>
+    <app-tree-detail [id]="exportId" (updated)="back()"></app-tree-detail>
 </div>

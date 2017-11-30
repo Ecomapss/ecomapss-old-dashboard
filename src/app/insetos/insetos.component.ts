@@ -3,6 +3,7 @@ import { InsetoModel } from "./classes/Inseto";
 import { ErrorPlugin } from "../settings/ShowingErrors";
 import { InsetosWebService } from "../services/insetos-web.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { MessageServiceService } from '../services/message-service.service';
 
 @Component({
   selector: "app-insetos",
@@ -16,7 +17,8 @@ export class InsetosComponent implements OnInit {
   constructor(
     public snackBar: MatSnackBar,
     private _errorPlugin: ErrorPlugin,
-    private _webServ: InsetosWebService
+    private _webServ: InsetosWebService,
+    private _messageService: MessageServiceService
   ) {}
   ngOnInit() {}
 
@@ -28,6 +30,7 @@ export class InsetosComponent implements OnInit {
         this._errorPlugin.displayMessage(this.snackBar);
         this.model.clear();
         this.pbar = false;
+        this._messageService.update();
       },
       error => {
         console.log(error);

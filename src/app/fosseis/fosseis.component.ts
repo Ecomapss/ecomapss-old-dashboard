@@ -4,6 +4,7 @@ import { FosseisWebService } from "../services/fosseis-web.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { ErrorPlugin } from "../settings/ShowingErrors";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MessageServiceService } from '../services/message-service.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class FosseisComponent implements OnInit {
   constructor(
     private _webService: FosseisWebService,
     private _snackBar: MatSnackBar,
-    private _errorPlugin: ErrorPlugin
+    private _errorPlugin: ErrorPlugin,
+    private _messageService: MessageServiceService
   ) {}
 
   ngOnInit() {}
@@ -32,6 +34,7 @@ export class FosseisComponent implements OnInit {
         this._errorPlugin.displayMessage(this._snackBar);
         this.pbar = false;
         this.model.clear();
+        this._messageService.update();
       },
       error => {
         console.log(error);
