@@ -15,6 +15,8 @@ import { MessageServiceService } from '../../services/message-service.service';
   encapsulation: ViewEncapsulation.None
 })
 export class FosseisListComponent implements OnInit {
+  isEdit: Boolean = false;
+  exportId: string;
   dataSource: MatTableDataSource<Fossil>;
   displayedColumns = ["designacao", "idade", "procedencia", "opcoes"];
   constructor(
@@ -80,6 +82,15 @@ export class FosseisListComponent implements OnInit {
         );
       }
     });
+  }
+
+  back() {
+    this.isEdit = false;
+  }
+
+  editItem(id: string) {
+    this.isEdit = true;
+    this.exportId = id;
   }
 
   applyFilter(filterValue: string) {
