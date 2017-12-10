@@ -15,7 +15,7 @@ export class EditComponent implements OnInit {
   @Input() id: string = "";
   model = new HistoriaModel(true, "", "", "");
   isEdit: Boolean = false;
-
+  pbar: Boolean = false;
   constructor(private _historyServer: HistoriasService, public snackBar: MatSnackBar, private _errorPlugin: ErrorPlugin, public messageService: MessageServiceService) { }
 
   ngOnInit() {

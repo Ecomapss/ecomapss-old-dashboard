@@ -17,7 +17,8 @@ import { MessageServiceService } from '../../services/message-service.service';
 export class InsetosListComponent implements OnInit {
   displayedColums = ["ordem", "categoria", "origem", "opcoes"];
   dataSource: MatTableDataSource<Inseto>;
-
+  isEdit: Boolean = false;
+  exportId: string = "";
   constructor(
     private _webServ: InsetosWebService,
     private _snackBar: MatSnackBar,
@@ -32,6 +33,15 @@ export class InsetosListComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+  }
+
+  editItem(id){
+    this.exportId = id;
+    this.isEdit = true;
+  }
+
+  back() {
+    this.isEdit = false;
   }
 
   getData() {

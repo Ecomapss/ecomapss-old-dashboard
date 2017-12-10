@@ -88,4 +88,8 @@ export class TreeDetailComponent implements OnInit {
       this.locs = res.data.loc;
     });
   }
+
+  remove(i: number) {
+    this.model.loc.splice(i, 1);
+  }
 }

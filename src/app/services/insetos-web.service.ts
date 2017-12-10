@@ -25,8 +25,8 @@ export class InsetosWebService {
     return this._http.delete<Info>(this.bsURL.concat(this.moduleName) + "/" +id);
   }
 
-  getByID(id: string): Observable<OneInseto>{
-    return this._http.get<OneInseto>(this.bsURL.concat(this.moduleName) + "/" + id);
+  getByID(id: string): Observable<any>{
+    return this._http.get<any>(this.bsURL.concat(this.moduleName) + "/" + id);
   }
 
   putItem(id: string, data: Inseto): Observable<Info>{
