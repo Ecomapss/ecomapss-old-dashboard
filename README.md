@@ -29,7 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## End Points
 
-"http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/trees"
-"http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/fosseis"
-"http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/insetos"
-"http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/historias"
+"http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/trees" <br />
+"http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/fosseis" <br />
+"http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/insetos" <br />
+"http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/historias" <br />
