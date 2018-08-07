@@ -6,6 +6,10 @@
     </div>
     <div class="example-container mat-elevation-z8">
         <mat-table #table [dataSource]="dataSource">
+            <ng-container matColumnDef="_id">
+                <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element._id}} </mat-cell>
+            </ng-container>
 
             <ng-container matColumnDef="ordem">
                 <mat-header-cell *matHeaderCellDef> Ordem </mat-header-cell>

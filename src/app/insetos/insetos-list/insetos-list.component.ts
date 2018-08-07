@@ -15,7 +15,7 @@ import { MessageServiceService } from '../../services/message-service.service';
   encapsulation: ViewEncapsulation.None
 })
 export class InsetosListComponent implements OnInit {
-  displayedColums = ["ordem", "categoria", "origem", "opcoes"];
+  displayedColums = ["_id","ordem", "categoria", "origem", "opcoes"];
   dataSource: MatTableDataSource<Inseto>;
   isEdit: Boolean = false;
   exportId: string = "";

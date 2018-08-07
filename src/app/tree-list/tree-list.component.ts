@@ -34,7 +34,7 @@ import { Router } from '@angular/router';
   ]
 })
 export class TreeListComponent implements OnInit {
-  displayedColumns = ["nome_cie", "categoria", "origem", "opcoes"];
+  displayedColumns = ["_id","nome_cie", "categoria", "origem", "opcoes"];
   trees: Array<Tree>;
   isEdit: Boolean = false;
   dataSource: MatTableDataSource<Tree>;

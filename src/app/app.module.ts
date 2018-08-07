@@ -123,6 +123,6 @@ const appRoutes: Routes = [
 
 export class AppModule { 
   constructor(private _config: Config) {
-    _config.setUrl("http://ecoback-env-clone.us-west-2.elasticbeanstalk.com/");
+    _config.setUrl("https://backeco.herokuapp.com/");
   }
 }

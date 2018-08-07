@@ -6,6 +6,13 @@
   </div>
   <div class="example-container mat-elevation-z8">
     <mat-table #table [dataSource]="dataSource">
+
+          <!-- Name Column -->
+      <ng-container matColumnDef="_id">
+        <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element._id}} </mat-cell>
+      </ng-container>
+
       <!-- Name Column -->
       <ng-container matColumnDef="titulo">
         <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>

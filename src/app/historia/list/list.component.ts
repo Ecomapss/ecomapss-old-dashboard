@@ -15,7 +15,7 @@ import { ConfirmDeleteComponent } from "../../dialogs/confirm-delete/confirm-del
 })
 export class ListComponent implements OnInit {
   dataSource: MatTableDataSource<Historia>;
-  displayedColumns = ["titulo", "info", "localidade", "opcoes"];
+  displayedColumns = ["_id","titulo", "info", "localidade", "opcoes"];
   isEdit: Boolean = false;
   exportId: string;
   constructor(

@@ -18,7 +18,7 @@ export class FosseisListComponent implements OnInit {
   isEdit: Boolean = false;
   exportId: string;
   dataSource: MatTableDataSource<Fossil>;
-  displayedColumns = ["designacao", "idade", "procedencia", "opcoes"];
+  displayedColumns = ["_id","designacao", "idade", "procedencia", "opcoes"];
   constructor(
     private _webServ: FosseisWebService,
     private _snackBar: MatSnackBar,
